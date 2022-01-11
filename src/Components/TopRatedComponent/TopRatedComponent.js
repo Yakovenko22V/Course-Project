@@ -10,6 +10,7 @@ import PreLoadingPage from "../PreLoadingPage/PreLoadingPage";
 
 
 const TopRatedComponent = () => {
+    document.title = 'Top Rated Movies'
     const dispatch = useDispatch();
     const store = useSelector((state) => state.reducerForMainPage);
 

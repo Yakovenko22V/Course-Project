@@ -15,7 +15,6 @@ const SelectedMovieComponent = () => {
     const store2 = useSelector((state) => state.reducerForMainPage);
     const params = useParams()
     const inclFilm = store2.favoriteMovies.includes(+params.id)
-    
 
     let isSubscribed = true;
 
@@ -26,6 +25,7 @@ const SelectedMovieComponent = () => {
             .then(
                 (data) => {
                     if (isSubscribed) {
+                        document.title = `${data.title}`
                         dispatch(actions.setSelectedMovie(data));
                     }
                 })

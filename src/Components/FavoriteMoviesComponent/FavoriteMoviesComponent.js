@@ -8,6 +8,7 @@ import { actions } from '../../store/reducers/statesReducer/reducerStates';
 import PreLoadingPage from '../PreLoadingPage/PreLoadingPage';
 
 const FavoriteMoviesComponent = () => {
+    document.title = 'Favorite Movies'
     const dispatch = useDispatch();
     const store = useSelector(state => state.reducerForMainPage);
    

@@ -103,11 +103,6 @@
                 height: 55vh;
                 overflow: scroll;
 
-                &:hover {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                }
-
                 img,
                 .film-post {
                     height: 30vh;
@@ -142,11 +137,6 @@
                 height: 55vh;
                 overflow: scroll;
 
-                &:hover {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                }
-
                 img,
                 .film-post {
                     height: 36vh;
@@ -178,11 +168,6 @@
             .films-block {
                 width: 21vw;
                 overflow: scroll;
-
-                &:hover {
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                }
 
                 img,
                 .film-post {
