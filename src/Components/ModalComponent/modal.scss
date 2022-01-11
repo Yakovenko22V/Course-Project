@@ -98,12 +98,19 @@ form {
 
         textarea {
             min-height: 70px;
-        }
-
-        input,
-        textarea {
             width: 150px;
             font-size: 14px;
+        }
+
+        input {
+            width: 150px;
+            min-height: 20px;
+            font-size: 14px;
+        }
+
+        input:focus,
+        textarea:focus {
+            min-height: 20px;
         }
     }
 }
