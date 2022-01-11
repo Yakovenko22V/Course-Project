@@ -1,0 +1,195 @@
+.selected-page {
+    color: blanchedalmond;
+    text-align: center;
+
+    .backdrop-path {
+        height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+
+        p {
+            position: absolute;
+            z-index: 100000000000;
+            font-size: 60px;
+            top: 50px;
+            left: 0;
+            right: 0;
+        }
+
+        .bg-fon {
+            background-color: rgba(0, 0, 0, 0.4);
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .basic-description {
+        text-align: start;
+        margin: 0 20px 0 4.4vw;
+
+        .favorite-block {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .block-star {
+                margin: 20px 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+
+                .star {
+                    margin-left: 10px;
+                    width: 25px;
+                    height: 25px;
+                    background: linear-gradient(to bottom, rgba(197, 196, 196, 1) 0%, rgba(180, 179, 178, 1) 100%);
+                    cursor: pointer;
+                    clip-path: polygon(
+                        50% 0%,
+                        66% 27%,
+                        98% 35%,
+                        76% 57%,
+                        79% 91%,
+                        50% 78%,
+                        21% 91%,
+                        24% 57%,
+                        2% 35%,
+                        32% 27%
+                    );
+                }
+
+                .add {
+                    background: linear-gradient(to bottom, yellow 0%, red 100%);
+                }
+            }
+
+            .vote-average {
+                display: flex;
+                justify-content: space-around;
+                width: 100px;
+                height: 45px;
+                border-radius: 30%;
+                background-color: yellow;
+                align-items: center;
+                font-size: 28px;
+                margin: 15px 0;
+                color: #2c2c2d;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        h1 {
+            text-decoration: underline;
+            color: white;
+        }
+
+        h2 {
+            color: white;
+            letter-spacing: 1px;
+            font-weight: normal;
+            margin-bottom: 40px;
+        }
+
+        .genres {
+            padding: 5px;
+            background-color: #dcdcdc;
+            margin-right: 7.5px;
+            margin-left: 15px;
+            color: black;
+        }
+
+        .block-span-info {
+            margin-top: 35px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 1px;
+
+            .span-info {
+                color: yellow;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .selected-page {
+        .backdrop-path {
+            p {
+                font-size: 35px;
+            }
+        }
+
+        .basic-description {
+            .favorite-block {
+                .block-star {
+                    span {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            h2 {
+                font-size: 15px;
+            }
+
+            .genres {
+                font-size: 11px;
+            }
+
+            .block-span-info {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .selected-page {
+        .backdrop-path {
+            p {
+                font-size: 45px;
+                top: 0;
+            }
+        }
+
+        .basic-description {
+            .favorite-block {
+                .block-star {
+                    span {
+                        font-size: 20px;
+                    }
+                }
+            }
+            h1 {
+                font-size: 30px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .genres {
+                font-size: 15px;
+            }
+
+            .block-span-info {
+                font-size: 15px;
+            }
+        }
+    }
+}
+

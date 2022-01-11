@@ -1,0 +1,16 @@
+.favorite {
+    color: blanchedalmond;
+    text-align: center;
+    
+    .main-favorite-block{
+        min-height: 80vh;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .favorite {
+        .main-favorite-block{
+            min-height: 83.3vh;
+        }
+    }
+}

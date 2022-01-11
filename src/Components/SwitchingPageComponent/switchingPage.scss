@@ -1,0 +1,28 @@
+.switch-page-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 20px 0;
+    width: 97.8vw;
+
+    .page {
+        cursor: pointer;
+        margin-left: 20px;
+        color: #dcdcdc;
+        font-weight: bold;
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+    }
+
+    .required {
+        color: black;
+        min-width: 20px;
+        min-height: 20px;
+        background-color: #778899;
+        border: 0.5px solid;
+        border-radius: 50%;
+        transition: 0.2s;
+    }
+}
