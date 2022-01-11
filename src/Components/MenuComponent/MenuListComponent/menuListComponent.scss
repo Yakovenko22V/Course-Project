@@ -43,10 +43,10 @@
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .menu-list {
-        width: 7vw;
-
+        width: 11vw;
+        
         img {
-            width: 6vw;
+            width: 8vw;
             height: 4vh;
         }
     }
@@ -54,9 +54,11 @@
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
     .menu-list {
+        width: 9vw;
+
         img {
-            width: 4vw;
-            height: 5vh;
+            width: 8vw;
+            height: 4vh;
         }
     }
 }
