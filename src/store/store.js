@@ -1,6 +1,8 @@
-import {configureStore} from '@reduxjs/toolkit';
-import {reducers} from './reducers/combinesReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import { reducers } from './reducers/combinesReducer';
+import { setFavorMoviesId } from '../middleware/setFavorMoviesId';
 
 export const store = configureStore({
-    reducer: reducers
+    reducer: reducers,
+    middleware:  [setFavorMoviesId]
 });

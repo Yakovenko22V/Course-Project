@@ -4,7 +4,7 @@ const reducerStates = {
     name: 'reducerStates',
     initialState: {
         mainPage: null,
-        zhanr: [],
+        genresOfMovie: [],
         numberPage: 1,
         pagesCount: null,
         inputValue: '',
@@ -18,8 +18,8 @@ const reducerStates = {
         setMainPage: (state, action) => {
             state.mainPage = action.payload;
         },
-        setZhanr: (state, action) => {
-            state.zhanr = action.payload
+        setGenresOfMovie: (state, action) => {
+            state.genresOfMovie = action.payload
         },
         setNumberPage: (state, action) => {
             state.numberPage = action.payload
@@ -37,17 +37,11 @@ const reducerStates = {
             state.recommendedMovies = action.payload;
         },
         setFavoriteMovies: (state, action) => {
-            let index = state.favoriteMovies.indexOf(action.payload);
-            (index === -1) ? state.favoriteMovies.push(action.payload) : state.favoriteMovies.splice(index, 1);
-            localStorage.setItem('favoriteMovies', JSON.stringify(state.favoriteMovies));
-            if (state.favoriteMoviesArr.some(fl => fl.id === action.payload)) {
-                state.favoriteMoviesArr = state.favoriteMoviesArr.filter(it => it.id !== action.payload)
-            } 
+            state.favoriteMovies = action.payload.newArrWithFavorMoviesId;
+            state.favoriteMoviesArr = action.payload.fma
         },
         setFavoriteMoviesArr: (state, action) => {
-            if (!state.favoriteMoviesArr.some(fl => fl.id === action.payload.id)) {
-                state.favoriteMoviesArr.push(action.payload)
-            }   
+            state.favoriteMoviesArr = action.payload;  
         },
         setSearchFavorFilm: (state, action) => {
             state.favoriteMoviesArr = action.payload

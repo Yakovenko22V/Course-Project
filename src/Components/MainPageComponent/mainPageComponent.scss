@@ -133,7 +133,7 @@
     .wrapper {
         .popular-films {
             .films-block {
-                width: 29vw;
+                width: 20vw;
                 height: 55vh;
                 overflow: scroll;
 
@@ -166,12 +166,13 @@
     .wrapper {
         .popular-films {
             .films-block {
-                width: 21vw;
+                width: 22vw;
+                height: 60vh;
                 overflow: scroll;
 
                 img,
                 .film-post {
-                    height: 45vh;
+                    height: 40vh;
                 }
 
                 .under-post-block {
@@ -192,16 +193,22 @@
     .wrapper {
         .popular-films {
             .films-block {
-                width: 21vw;
+                width: 19.5vw;
+                height: 60vh;
                 overflow: hidden;
-                
+
+                img,
+                .film-post {
+                    height: 40vh;
+                }
+
                 .under-post-block {
                     h4 {
                         font-size: 18px;
                         margin: 2vh 0;
                     }
                     .star {
-                        bottom: 67vh;
+                        bottom: 58vh;
                     }
                 }
             }

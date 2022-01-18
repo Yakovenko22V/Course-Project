@@ -14,8 +14,9 @@ const SelectedMovieComponent = () => {
     const store = useSelector((state) => state.reducerForMainPage.selectedMovie);
     const store2 = useSelector((state) => state.reducerForMainPage);
     const params = useParams()
+    
     const inclFilm = store2.favoriteMovies.includes(+params.id)
-
+    
     let isSubscribed = true;
 
     useEffect(() => {

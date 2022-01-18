@@ -8,10 +8,10 @@ import { actions } from '../../store/reducers/statesReducer/reducerStates';
 import PreLoadingPage from '../PreLoadingPage/PreLoadingPage';
 
 const FavoriteMoviesComponent = () => {
-    document.title = 'Favorite Movies'
     const dispatch = useDispatch();
     const store = useSelector(state => state.reducerForMainPage);
-   
+    const URL_Genres = 'https://api.themoviedb.org/3/genre/movie/list?api_key=80b5675ae89432a73afebc4c62ea727b&language=en-US';
+    
     const FavorFilm = store.favoriteMoviesArr.filter(fl => {
             if (store.inputValue.length) {
                return fl.title.toLowerCase().includes(store.inputValue.toLowerCase())
@@ -19,12 +19,12 @@ const FavoriteMoviesComponent = () => {
         })
     
 
-    function getZhanr() {
-        fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=80b5675ae89432a73afebc4c62ea727b&language=en-US')
+    function getGenresOfMovie() {
+        fetch(URL_Genres)
             .then(res => res.json())
             .then(
                 (data) => {
-                    dispatch(actions.setZhanr(data.genres));
+                    dispatch(actions.setGenresOfMovie(data.genres));
                 })
     };
     
@@ -34,8 +34,9 @@ const FavoriteMoviesComponent = () => {
             .then(res => res.json())
             .then(
                 (data) => {
+                    document.title = 'Favorite Movies'
                     dispatch(actions.setFavoriteMoviesArr(data))
-                }).then(() => { getZhanr() })
+                }).then(() => { getGenresOfMovie() })
 
             return item
         })
@@ -43,7 +44,7 @@ const FavoriteMoviesComponent = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    if(!store.zhanr || !store.favoriteMovies) return <PreLoadingPage/>
+    if(!store.genresOfMovie || !store.favoriteMovies) return <PreLoadingPage/>
 
     return (
         <div>
