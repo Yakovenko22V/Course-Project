@@ -1,37 +1,26 @@
 .menu-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     position: absolute;
-    top: 10vh;
-    left: 0;
-    width: 4.3vw;
-    height: 100vh;
-    background-color: #778899;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
+    top: 30vh;
+    left: 20%;
     transition: all 0.5s ease;
+    text-align: center;
 
     ul {
-        margin: 0;
         padding: 0;
     }
-
-    img {
+    a,
+    .contact-us {
+        text-decoration: none;
+        color: white;
+        margin-right: 7vw;
+        font-size: 20px;
+        font-weight: 500;
         cursor: pointer;
-        border: solid 1px #2c2c2d;
-        border-radius: 50%;
-        box-shadow: 4px 4px 5px #2c2c2d;
-        width: 40px;
-        height: 40px;
-        padding: 10px 0;
-        margin-top: 5vh;
 
         &:hover {
-            -webkit-transform: scale(1.15);
-            transform: scale(1.15);
+            color: #e41a1a;
         }
     }
 }
@@ -39,26 +28,4 @@
 .without-menu {
     position: absolute;
     left: -1000px;
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    .menu-list {
-        width: 11vw;
-        
-        img {
-            width: 8vw;
-            height: 4vh;
-        }
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 992px) {
-    .menu-list {
-        width: 9vw;
-
-        img {
-            width: 8vw;
-            height: 4vh;
-        }
-    }
 }

@@ -1,13 +1,15 @@
 .aLink {
     text-decoration:none;
     text-align: center;
+    
     .footer {
-        background-color: #778899;
-        height: 50px;
+        background-color: white;
+        height: 55px;
 
         p {
+            border-top: thick double #dcdcdc;
             padding: 13px;
-            color: #dcdcdc;
+            color: silver;
             font-weight: bold;
         }
     }

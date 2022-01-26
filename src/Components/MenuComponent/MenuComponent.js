@@ -3,7 +3,7 @@ import './menuComponent.scss';
 import MenuListComponent from "./MenuListComponent/MenuListComponent";
 
 const MenuComponent = () => {
-    const [activeMenu, setActiveMenu] = useState(false);
+    const [activeMenu, setActiveMenu] = useState(true);
 
     return (
         <div>

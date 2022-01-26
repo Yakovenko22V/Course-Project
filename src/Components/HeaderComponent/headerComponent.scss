@@ -1,32 +1,106 @@
 .header {
     position: fixed;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #778899;
-    height: 10vh;
+    height: 60vh;
     width: 100vw;
     text-align: center;
+    background-image: url(../../icons/photo_2022-01-25_20-07-11.jpg);
+    background-repeat: repeat-y;
+    animation: header-animation 300s linear infinite;
+    position: relative;
 
-    h1 {
-        margin-top: 1.5vh;
-        margin-left: 2vw;
-        text-shadow: white 1px 0 6px;
+    @keyframes header-animation {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: 0 -3000px;
+        }
     }
 
-    .users-actions-div {
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-color: transparent;
+        background-image: radial-gradient(circle at top center, rgba(17, 17, 17, 0) 10%, rgba(17, 17, 17, 0.7) 70%);
+    }
+
+    .header-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
         display: flex;
         flex-direction: row;
-        margin-right: 3vw;
+        justify-content: space-between;
+        z-index: 2;
+        width: 100%;
 
-        h4 {
-            cursor: pointer;
-            margin-right: 1vw;
+        h1 {
+            margin-top: 1.5vh;
+            margin-left: 2vw;
 
-            span:hover {
-                text-decoration: underline;
+            .title-word1 {
+                color: white;
+            }
+            .title-word2 {
+                color: #e41a1a;
             }
         }
+
+        .users-actions-div {
+            display: flex;
+            flex-direction: row;
+            margin: 2.5px 3vw 0 0;
+
+            h4 {
+                cursor: pointer;
+                margin-right: 1vw;
+                margin-top: 2vh;
+
+                span {
+                    font-weight: normal;
+
+                    .span-signIn {
+                        margin-left: 5px;
+                        color: #673dff;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                p {
+                    margin: 0;
+                    padding: 2px 10px;
+                    background-color: whitesmoke;
+                    color: silver;
+                    font-weight: bold;
+                    border-radius: 10%;
+                    opacity: 0.8;
+
+                    img {
+                        margin-top: 2px;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .header-line {
+        position: absolute;
+        top: 15vh;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: white;
     }
 }
 

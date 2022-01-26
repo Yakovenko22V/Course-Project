@@ -10,81 +10,95 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
 }
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    width: 520px;
+.modal-wrapper-div {
+    position: relative;
     margin: 20vh auto;
-    padding: 30px 30px 6px 30px;
-    border: 1px solid rgba(120, 120, 120, 0.7);
-    border-radius: 5px;
-    background: rgba(60, 63, 65, 0.9);
-    opacity: 1;
-    color: #fff;
+    display: flex;
+    justify-content: center;
 
-    h2 {
-        font-family: "Open Sans", sans-serif;
-        color: #dcdcdc;
-        letter-spacing: 4px;
-        margin-top: 0;
-        font-weight: lighter;
+    .register-span {
+        position: absolute;
+        bottom: 0;
+        left: auto;
+        color: #fff;
+        padding: 0 0 5px 0;
     }
 
-    textarea,
-    input {
-        width: 470px;
-        margin: 0 0 20px 0;
-        display: block;
-        padding-right: 20px;
-        padding-left: 20px;
-        border-radius: 4px;
-        font-weight: 300;
-        font-size: 18px;
-        font-family: "Open Sans", sans-serif;
-        background: rgba(255, 255, 255, 0.4);
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        width: 520px;
+        padding: 30px 30px 15px 30px;
+        border: 1px solid rgba(120, 120, 120, 0.7);
+        border-radius: 5px;
+        background: rgba(60, 63, 65, 0.9);
+        opacity: 1;
+        color: #fff;
 
-        &::-webkit-input-placeholder {
-            color: white;
+        h2 {
+            font-family: "Open Sans", sans-serif;
+            color: #dcdcdc;
+            letter-spacing: 4px;
+            margin-top: 0;
             font-weight: lighter;
         }
-    }
 
-    textarea {
-        overflow: hidden;
-        height: 110px;
-        border: 1px solid rgba(255, 255, 255, 0.6);
-    }
+        textarea,
+        input {
+            width: 470px;
+            margin: 0 0 20px 0;
+            display: block;
+            padding-right: 20px;
+            padding-left: 20px;
+            border-radius: 4px;
+            font-weight: 300;
+            font-size: 18px;
+            font-family: "Open Sans", sans-serif;
+            background: rgba(255, 255, 255, 0.4);
 
-    input {
-        height: 48px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-    }
+            &::-webkit-input-placeholder {
+                color: white;
+                font-weight: lighter;
+            }
+        }
 
-    input:focus,
-    textarea:focus {
-        background-color: rgba(0, 0, 0, 0.2);
-        font-weight: bold;
-        color: white;
-        box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
-        overflow: hidden;
-    }
+        textarea {
+            overflow: hidden;
+            height: 110px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
 
-    .btn {
-        cursor: pointer;
-        border: 1px solid #253737;
-        background: #416b68;
-        border-radius: 6px;
-        box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
-        outline: none;
+        input {
+            height: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
 
-        &:active {
-            margin-top: 1px;
-            border: 1px solid #333333;
-            background: #ffcc00;
-            box-shadow: rgba(255, 255, 255, 0) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
-            color: black;
+        input:focus,
+        textarea:focus {
+            background-color: rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+        }
+
+        .btn {
+            cursor: pointer;
+            border: 1px solid #253737;
+            background: #416b68;
+            border-radius: 6px;
+            box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
+            outline: none;
+
+            &:active {
+                margin-top: 1px;
+                border: 1px solid #333333;
+                background: #ffcc00;
+                box-shadow: rgba(255, 255, 255, 0) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
+                color: black;
+            }
         }
     }
 }

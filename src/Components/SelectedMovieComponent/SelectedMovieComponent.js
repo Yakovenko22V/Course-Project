@@ -14,9 +14,9 @@ const SelectedMovieComponent = () => {
     const store = useSelector((state) => state.reducerForMainPage.selectedMovie);
     const store2 = useSelector((state) => state.reducerForMainPage);
     const params = useParams()
-    
+
     const inclFilm = store2.favoriteMovies.includes(+params.id)
-    
+
     let isSubscribed = true;
 
     useEffect(() => {
@@ -36,34 +36,34 @@ const SelectedMovieComponent = () => {
             isSubscribed = false;
         }
     }, [params.id]);
-    
-    if (!store) return <PreLoadingPage/>
+
+    if (!store) return <PreLoadingPage />
     return (
         <div>
             <HeaderComponent title="TMBD's API" />
             <div className='wrapper selected-page'>
+                <h1>{store.original_title}</h1>
+                <div className="favorite-block">
+                    <p className="vote-average">
+                        <img className='like' src="https://pngicon.ru/file/uploads/like.png" alt="like" />
+                        {store.vote_average}
+                    </p>
+                    <div className="block-star">
+                        {
+                            (!inclFilm) ?
+                                <span>Add to favorite:</span> :
+                                <span>Remove from favorite:</span>
+                        }
+                        <div className={!inclFilm ? 'star' : 'star add'}
+                            onClick={() => dispatch(actions.setFavoriteMovies(+params.id))}>
+                        </div>
+                    </div>
+                </div>
                 <div className='backdrop-path' style={{ backgroundImage: `url('https://image.tmdb.org/t/p/original/${store.backdrop_path}')` }}>
                     <div className="bg-fon"></div>
                     {(store.tagline.length === 0) ? <p></p> : <p> "{store.tagline}" </p>}
                 </div>
                 <div className="basic-description">
-                    <div className="favorite-block">
-                        <p className="vote-average">
-                            <img className='like' src="https://pngicon.ru/file/uploads/like.png" alt="like" />
-                            {store.vote_average}
-                        </p>
-                        <div className="block-star">
-                            {
-                                (!inclFilm) ?
-                                    <span>Add to favorite:</span> :
-                                    <span>Remove from favorite:</span>
-                            }
-                            <div className={!inclFilm ? 'star' : 'star add'}
-                                onClick={() => dispatch(actions.setFavoriteMovies(+params.id))}>
-                            </div>
-                        </div>
-                    </div>
-                    <h1>{store.original_title}</h1>
                     <h2>{store.overview}</h2>
                     <div className="genres-block">
                         Genres:

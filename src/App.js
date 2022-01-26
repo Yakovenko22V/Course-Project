@@ -5,7 +5,7 @@ import MainPageComponent from './Components/MainPageComponent/MainPageComponent'
 function App() {
   return (
     <div className="App">
-      <HeaderComponent title = "TMBD's API" name='MainPage'/>
+      <HeaderComponent name='MainPage'/>
       <MainPageComponent/>
     </div>
   );
