@@ -3,7 +3,7 @@
     flex-direction: column;
     position: absolute;
     top: 60vh;
-    background-color: #F6FFF8;
+    background-color: #f6fff8;
     z-index: -1;
     width: 100%;
 
@@ -61,8 +61,8 @@
                             justify-content: space-between;
                             text-align: start;
                             padding: 5px;
-                            
-                            span{
+
+                            span {
                                 font-style: italic;
                                 color: #cccc00;
                             }
@@ -151,16 +151,37 @@
     .wrapper {
         .popular-films {
             .films-block {
-                width: 29vw;
-                height: 55vh;
-                overflow: scroll;
+                display: flex;
+                width: 90vw;
+                height: 32vh;
 
                 img,
                 .film-post {
-                    height: 30vh;
+                    width: 40vw;
+                    max-width: 150px;
+                    height: 32vh;
+
+                    &:hover {
+                        .info-hover-block {
+                            width: 40vw;
+                            max-width: 150px;
+                            height: 100%;
+
+                            .wrapper-discription {
+                                justify-content: space-around;
+                                text-align: center;
+                                font-size: 13px;
+
+                                .shot-overview {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
                 }
 
                 .under-post-block {
+                    width: 100%;
                     h4 {
                         margin: 2vh 0;
                     }
@@ -172,7 +193,7 @@
                     }
 
                     .star {
-                        bottom: 47vh;
+                        bottom: -7vh;
                         right: 0.3vw;
                     }
                 }
@@ -181,86 +202,34 @@
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 767px) {
+@media screen and (min-width: 481px) and (max-width: 992px) {
     .wrapper {
         .popular-films {
             .films-block {
-                width: 20vw;
-                height: 55vh;
-                overflow: scroll;
+                width: 35vw;
+                max-width: 250px;
+                height: 75vh;
 
                 img,
                 .film-post {
-                    height: 36vh;
-                }
+                    width: 35vw;
+                    max-width: 250px;
 
-                .under-post-block {
-                    h4 {
-                        margin: 2vh 0;
-                    }
-                    .genre-block {
-                        .genre-span {
-                            font-size: 14px;
-                            margin: 0 3px 5px 8px;
+                    &:hover {
+                        .info-hover-block {
+                            width: 35vw;
+                            max-width: 250px;
+
+                            .wrapper-discription {
+                                justify-content: space-around;
+                            }
                         }
                     }
-
-                    .star {
-                        bottom: 53vh;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 992px) {
-    .wrapper {
-        .popular-films {
-            .films-block {
-                width: 22vw;
-                height: 60vh;
-                overflow: scroll;
-
-                img,
-                .film-post {
-                    height: 40vh;
                 }
 
                 .under-post-block {
-                    h4 {
-                        font-size: 18px;
-                        margin: 2vh 0;
-                    }
                     .star {
-                        bottom: 62vh;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 993px) and (max-width: 1110px) {
-    .wrapper {
-        .popular-films {
-            .films-block {
-                width: 19.5vw;
-                height: 60vh;
-                overflow: hidden;
-
-                img,
-                .film-post {
-                    height: 40vh;
-                }
-
-                .under-post-block {
-                    h4 {
-                        font-size: 18px;
-                        margin: 2vh 0;
-                    }
-                    .star {
-                        bottom: 58vh;
+                        bottom: 0vh;
                     }
                 }
             }

@@ -28,10 +28,10 @@ const MenuListComponent = () => {
             </NavLink>
             <div >
                 <ul onClick={() => setSupportModal(!activeSupportModal)} >
+                    <p className="contact-us">Contact Us</p>
                     <div className={activeSupportModal ? 'active-class' : 'not-active'}>
                         {<ModalComponent setSupportModal={setSupportModal} actionName='Support service' />}
                     </div>
-                    <p className="contact-us">Contact Us</p>
                 </ul>
             </div>
         </>

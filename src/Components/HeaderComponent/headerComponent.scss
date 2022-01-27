@@ -1,7 +1,6 @@
 .header {
-    position: fixed;
     height: 60vh;
-    width: 100vw;
+    width: 100%;
     text-align: center;
     background-image: url(../../icons/photo_2022-01-25_20-07-11.jpg);
     background-repeat: repeat-y;
@@ -68,7 +67,8 @@
 
                     .span-signIn {
                         margin-left: 5px;
-                        color: #673dff;
+                        color: #3a1cff;
+                        font-size: 16px;
 
                         &:hover {
                             text-decoration: underline;
@@ -104,11 +104,10 @@
     }
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .header {
         h1 {
-            margin: 1.6vh auto;
-            font-size: 4.83vw;
+            font-size: 30px;
         }
 
         .users-actions-div {
@@ -119,26 +118,6 @@
                 height: 10px;
                 font-size: 10px;
                 margin: 6px 0 0 0;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 481px) and (max-width: 767px) {
-    .header {
-        h1 {
-            margin-top: 1.5vh;
-            font-size: 4.83vw;
-        }
-
-        .users-actions-div {
-            flex-direction: column;
-            margin-right: 2vw;
-
-            h4 {
-                height: 22px;
-                font-size: 16px;
-                margin: 9px 8px 0 0;
             }
         }
     }
