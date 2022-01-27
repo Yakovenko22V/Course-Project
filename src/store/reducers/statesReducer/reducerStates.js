@@ -9,6 +9,7 @@ const reducerStates = {
         pagesCount: null,
         inputValue: '',
         selectedMovie: null,
+        movieTrailer: [],
         recommendedMovies: null,
         favoriteMovies: JSON.parse(localStorage.getItem('favoriteMovies')) || [],
         favoriteMoviesArr: [],
@@ -32,6 +33,9 @@ const reducerStates = {
         },
         setSelectedMovie: (state, action) => {
             state.selectedMovie = action.payload;
+        },
+        setMovieTrailer: (state, action) => {
+            state.movieTrailer = action.payload;
         },
         setRecommendedMovies: (state, action) => {
             state.recommendedMovies = action.payload;

@@ -8,20 +8,33 @@ import HeaderComponent from "../HeaderComponent/HeaderComponent";
 import RecommendationsComponents from "./RecommendationsComponents/RecommendationsComponents";
 import FooterComponent from "../FooterComponent/FooterComponent";
 import PreLoadingPage from "../PreLoadingPage/PreLoadingPage";
+import MovieTrailer from "../MovieTrailer/MovieTrailer";
 
 const SelectedMovieComponent = () => {
     const dispatch = useDispatch();
     const store = useSelector((state) => state.reducerForMainPage.selectedMovie);
     const store2 = useSelector((state) => state.reducerForMainPage);
     const params = useParams()
+    const URL_moviesInfo = `https://api.themoviedb.org/3/movie/${params.id}?api_key=80b5675ae89432a73afebc4c62ea727b&language=en-US`
+    const URL_movieTrailer = `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=80b5675ae89432a73afebc4c62ea727b&language=en-US`
 
     const inclFilm = store2.favoriteMovies.includes(+params.id)
 
+
     let isSubscribed = true;
+
+    function getMovieTrailer() {
+        fetch(URL_movieTrailer)
+            .then(res => res.json())
+            .then(
+                ({ results }) => {
+                    dispatch(actions.setMovieTrailer(results));
+                })
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=80b5675ae89432a73afebc4c62ea727b&language=en-US`)
+        fetch(URL_moviesInfo)
             .then(res => res.json())
             .then(
                 (data) => {
@@ -29,7 +42,7 @@ const SelectedMovieComponent = () => {
                         document.title = `${data.title}`
                         dispatch(actions.setSelectedMovie(data));
                     }
-                })
+                }).then(() => { getMovieTrailer() })
 
         return () => {
             // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -87,6 +100,11 @@ const SelectedMovieComponent = () => {
                         <p><span className="span-info">POPULARITY:</span> {store.popularity}.</p>
                     </div>
                 </div>
+                {
+                    store2.movieTrailer.filter((item) => item.name === 'Official Trailer').map((item) =>
+                        <MovieTrailer key={item.id} trailer_key={item.key} />
+                    )
+                }
                 <RecommendationsComponents id={params.id} />
                 <FooterComponent />
             </div>
