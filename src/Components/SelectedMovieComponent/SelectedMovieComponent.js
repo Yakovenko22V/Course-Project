@@ -101,7 +101,7 @@ const SelectedMovieComponent = () => {
                     </div>
                 </div>
                 {
-                    store2.movieTrailer.filter((item) => item.name === 'Official Trailer').map((item) =>
+                    store2.movieTrailer.filter((item) => item.type === 'Trailer').map((item) =>
                         <MovieTrailer key={item.id} trailer_key={item.key} />
                     )
                 }

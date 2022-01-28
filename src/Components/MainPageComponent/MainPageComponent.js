@@ -6,6 +6,7 @@ import { MainPageCompItem } from './MainPageCompItem';
 import FooterComponent from '../FooterComponent/FooterComponent';
 import SwitchingPageComponent from '../SwitchingPageComponent/SwitchingPageComponent';
 import PreLoadingPage from '../PreLoadingPage/PreLoadingPage';
+import HeaderComponent from '../HeaderComponent/HeaderComponent';
 
 
 function MainPageComponent() {
@@ -13,7 +14,7 @@ function MainPageComponent() {
     const store = useSelector((state) => state.reducerForMainPage);
     const URL_Genres = 'https://api.themoviedb.org/3/genre/movie/list?api_key=80b5675ae89432a73afebc4c62ea727b&language=en-US';
     const URL = `https://api.themoviedb.org/3/movie/popular?api_key=80b5675ae89432a73afebc4c62ea727b&language=en-US&page=${store.numberPage}`;
-    
+
     let isSubscribed = true;
 
     function getGenresOfMovie() {
@@ -48,19 +49,22 @@ function MainPageComponent() {
         }
     }, [store.inputValue.length, store.numberPage,]);
 
-    if (!store.mainPage) return <PreLoadingPage/>
+    if (!store.mainPage) return <PreLoadingPage />
     return (
-        <div className='wrapper'>
-            {(store.mainPage.length === 0) ? <h2>Movies not found</h2>: <h2>POPULAR MOVIES</h2>}
-            <div className='popular-films'>
-                {
-                    store.mainPage.map(item =>
-                        <MainPageCompItem key={item.id} item={item} />
-                    )
-                }
+        <div>
+            <HeaderComponent name='MainPage' />
+            <div className='wrapper'>
+                {(store.mainPage.length === 0) ? <h2>Movies not found</h2> : <h2>POPULAR MOVIES</h2>}
+                <div className='popular-films'>
+                    {
+                        store.mainPage.map(item =>
+                            <MainPageCompItem key={item.id} item={item} />
+                        )
+                    }
+                </div>
+                <SwitchingPageComponent />
+                <FooterComponent />
             </div>
-            <SwitchingPageComponent />
-            <FooterComponent />
         </div>
     )
 }
